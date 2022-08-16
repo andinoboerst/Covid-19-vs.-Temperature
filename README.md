@@ -10,3 +10,5 @@ The bottom visual, i.e. the new covid cases, includes a threshold value set to 0
 
  A picture of the visual is shown here:
 ![fig1](https://user-images.githubusercontent.com/73847250/185001803-7ec4780f-22c7-4333-a5f7-1c93eb12e7c5.png)
+
+The data is is processed by forward filling missing data points. Additionally the plotted lines are smoothed out with the gaussian filter to avoid rough edges in the plot. To obtain the line plot with differently colored sections the line was divided into LineCollections.

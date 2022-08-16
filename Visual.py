@@ -9,10 +9,12 @@ from matplotlib.collections import LineCollection
 from matplotlib.colors import ListedColormap, BoundaryNorm
 from matplotlib.lines import Line2D
 from matplotlib.widgets import TextBox
-
+import os
 
 def prepare_data():
-    df = pd.read_csv('*/Covid-19-vs.-Temperature/covid_countries.csv')
+    dirname = os.path.dirname(__file__)
+    filename = os.path.join(dirname, '/covid_countries.csv')
+    df = pd.read_csv(filename)
 
     df['date'] = pd.to_datetime(df.loc[:,'date'])
     df.loc[:,~df.columns.isin(['date', 'country_name'])] = df.loc[:,~df.columns.isin(['date', 'country_name'])].apply(pd.to_numeric)

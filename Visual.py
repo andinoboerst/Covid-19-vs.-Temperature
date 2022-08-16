@@ -12,7 +12,7 @@ from matplotlib.widgets import TextBox
 
 
 def prepare_data():
-    df = pd.read_csv('G:\My Drive\Coursera\Applied Data Science with Python\Part 2\Week 4\Assignment_files\covid_countries.csv')
+    df = pd.read_csv('*/Covid-19-vs.-Temperature/covid_countries.csv')
 
     df['date'] = pd.to_datetime(df.loc[:,'date'])
     df.loc[:,~df.columns.isin(['date', 'country_name'])] = df.loc[:,~df.columns.isin(['date', 'country_name'])].apply(pd.to_numeric)

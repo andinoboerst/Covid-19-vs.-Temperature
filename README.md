@@ -1,4 +1,4 @@
-# Covid-19-vs.-Temperature
+# Covid-19 vs. Temperature
 
 This visualization uses the data given in the .csv file obtained from: [https://github.com/GoogleCloudPlatform/covid-19-open-data](https://github.com/GoogleCloudPlatform/covid-19-open-data) and queried in BigQuery.
 

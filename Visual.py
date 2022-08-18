@@ -17,6 +17,7 @@ def prepare_data():
     df = pd.read_csv(filename)
 
     df['date'] = pd.to_datetime(df.loc[:,'date'])
+    df['country_name'] = df['country_name'].str.lower()
     df.loc[:,~df.columns.isin(['date', 'country_name'])] = df.loc[:,~df.columns.isin(['date', 'country_name'])].apply(pd.to_numeric)
     df.loc[:,'perc_new_confirmed'] = df.loc[:,'new_confirmed'] / df.loc[:,'population']
 
@@ -25,7 +26,7 @@ def prepare_data():
     return df, country_list
 
 def extract_data(df, country):
-    df_country = df.loc[df['country_name'] == country].copy()
+    df_country = df.loc[df['country_name'] == country.lower()].copy()
     df_country.loc[:,~df_country.columns.isin(['date', 'country_name'])] = df_country.loc[:,~df.columns.isin(['date', 'country_name'])].fillna(method='ffill')
 
     x_country = df_country.loc[:,'date'].tolist().copy()
@@ -110,7 +111,7 @@ def plot_data(ax1,ax2,country,x_country,y_country_cases,y_country_temps):
 
 
 def submit(text):
-    new_country = text
+    new_country = text.lower()
     if new_country in country_list:
         ax1.set_title('')
         new_x_country, new_y_country_cases, new_y_country_temps = extract_data(df,new_country)

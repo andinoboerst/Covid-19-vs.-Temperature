@@ -1,6 +1,6 @@
 # Covid-19 vs. Temperature
 
-This visualization uses the data given in the .csv file obtained from: [https://github.com/GoogleCloudPlatform/covid-19-open-data](https://github.com/GoogleCloudPlatform/covid-19-open-data) and queried in BigQuery.
+This visualization uses the data given in the .csv file obtained from: [https://github.com/GoogleCloudPlatform/covid-19-open-data](https://github.com/GoogleCloudPlatform/covid-19-open-data) which was queried with SQL in BigQuery to obtain only the relevant information for this project.
 
 The data includes daily information on new covid cases and the average temperature in every country in europe.
 
